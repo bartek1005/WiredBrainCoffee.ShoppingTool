@@ -8,7 +8,7 @@ namespace WiredBrainCoffee.ShoppingTool
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Write 'help' to display data");
+            Console.WriteLine("Write 'help' to display available coffee shops");
 
             var coffeeShopDataProvider = new CoffeeShopDataProvider();
 
