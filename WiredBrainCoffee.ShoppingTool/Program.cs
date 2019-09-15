@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using WiredBrainCoffe.DataAccess.Model;
 
 namespace WiredBrainCoffee.ShoppingTool
@@ -27,6 +28,32 @@ namespace WiredBrainCoffee.ShoppingTool
                     foreach (var c in coffeeShops)
                     {
                         Console.WriteLine($"> " + c.Location);
+                    }
+                }
+                else
+                {
+                    var foundCoffeShops = coffeeShops
+                        .Where(x => x.Location.StartsWith(line, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+
+                    if(foundCoffeShops.Count == 0)
+                    {
+                        Console.WriteLine($"Location '{line} 'not found");
+                    }
+                    else if (foundCoffeShops.Count == 1)
+                    {
+                        Console.WriteLine($"Location: {foundCoffeShops.First().Location}");
+                        Console.WriteLine($"Beans in stock: {foundCoffeShops.First().BeansInStockInKg} kg");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Multiple shops found");
+                        short i = 1;
+                        foreach (var cs in foundCoffeShops)
+                        {
+                            Console.WriteLine($" {i}. {cs.Location}");
+                            i++;
+                        }
                     }
                 }
 
