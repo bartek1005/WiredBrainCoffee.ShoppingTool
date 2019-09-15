@@ -8,9 +8,11 @@ namespace WiredBrainCoffe.DataAccess.Model
     {
         public IEnumerable<CoffeeShop> LoadCoffeeShops()
         {
-            yield return new CoffeeShop { Location = "Palatka", BeansInStockInKg = 100, PaperCupsInStock = 123 };
-            yield return new CoffeeShop { Location = "Orlando", BeansInStockInKg = 50, PaperCupsInStock = 23 };
-            yield return new CoffeeShop { Location = "Miami", BeansInStockInKg = 75, PaperCupsInStock = 1345 };
+            yield return new CoffeeShop { Location = "Palatka", BeansInStockInKg = 100 };
+            yield return new CoffeeShop { Location = "Orlando", BeansInStockInKg = 50 };
+            yield return new CoffeeShop { Location = "Miami", BeansInStockInKg = 75 };
+            yield return new CoffeeShop { Location = "Ocala", BeansInStockInKg = 10 };
+
         }
     }
 }
