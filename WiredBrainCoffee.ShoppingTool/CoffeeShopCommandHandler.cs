@@ -30,6 +30,7 @@ namespace WiredBrainCoffee.ShoppingTool
             {
                 Console.WriteLine($"Location: {foundCoffeShops.First().Location}");
                 Console.WriteLine($"Beans in stock: {foundCoffeShops.First().BeansInStockInKg} kg");
+                Console.WriteLine($"Paper cups in stock: {foundCoffeShops.First().PaperCupsInStock}");
             }
             else
             {
